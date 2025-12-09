@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from reportlab.pdfgen import canvas
+from datetime import datetime
 
 
 # CREATION DE L'INTERFACE ET PERSONNALISATION
@@ -151,12 +152,30 @@ def valider_commande():
     somme = sum(list_valeur)  # pas besoin de global
     total_entry.delete(0, END)
     total_entry.insert(0, somme)
+
+    now = datetime.now()
+    date_heure = now.strftime("%d/%m/%Y, %H:%M:%S")
+    
+    i = 1
     
     c = canvas.Canvas("ticket.pdf")
-    c.drawString(50, 800, "Ticket de Commande")
-    c.drawString(50, 780, f"Total : {somme} €")
-    c.save()
+    c.drawString(200, 800, "RESTAURANT AMINE")
+    c.drawImage("projet8/burger.png", 50, 720, width=50, height=50)  
+    c.drawString(50, 700, "Ticket de Commande")
+    c.drawString(50, 680, f"{date_heure}")
+    c.drawString(50, 660, f"Numéro de ticket {i}")
+    c.drawString(50, 640, "*****************************")
+
     
+    y = 620
+    for ligne in result_Text.get("1.0", END).split("\n"):
+        if ligne.strip() != "":
+            c.drawString(50, y, ligne)
+            y -= 15  
+
+    c.drawString(50, y - 20, f"Total : {somme} €")
+    i += 1
+    c.save()
     messagebox.showinfo("Commande validée", "Votre commande a été enregistrée !")
 
 
