@@ -1,0 +1,83 @@
+Projet : Restaurant Amine - Application de Gestion de Commandes
+Description
+
+Cette application Python permet de simuler la gestion des commandes dans un restaurant.
+Elle offre une interface graphique conviviale pour sélectionner des plats, calculer le total et générer un ticket PDF de commande.
+
+L’application est développée avec Tkinter pour l’interface graphique et ReportLab pour générer des fichiers PDF.
+
+Fonctionnalités
+
+Affichage du menu
+
+
+
+Affiche une liste de plats avec leur nom, catégorie et prix.
+
+Les utilisateurs peuvent entrer la quantité désirée pour chaque plat.
+
+Ajout au panier
+
+Chaque plat a un bouton ADD pour l’ajouter au panier.
+
+Le panier affiche le détail des articles sélectionnés et leurs prix calculés automatiquement.
+
+Calcul automatique du total
+
+Le bouton Total calcule la somme de tous les articles ajoutés au panier.
+
+Validation de la commande
+
+Le bouton Valider enregistre la commande et génère un ticket PDF (ticket.pdf) avec le total.
+
+Une fenêtre pop-up confirme que la commande a été enregistrée.
+
+Réinitialisation du panier
+
+Le bouton Reinitialiser vide les entrées, le panier et le total, prêt pour une nouvelle commande.
+
+Technologies utilisées
+
+Python 3
+
+Tkinter : Interface graphique
+
+ReportLab : Génération du ticket PDF
+
+Tkinter.messagebox : Affichage de notifications
+
+Structure du projet
+
+main.py : Code principal de l’application
+
+projet8/restaurant.ico : Icône de l’application
+
+ticket.pdf : Fichier PDF généré après validation de la commande
+
+Objectifs pédagogiques
+
+Manipulation de dictionnaires et listes en Python.
+
+Utilisation des widgets Tkinter (Label, Entry, Button, Text, Scrollbar).
+
+Gestion d’événements et fonctions callback (command).
+
+Création d’un PDF dynamique avec ReportLab.
+
+Automatisation d’un processus de gestion de commandes.
+
+Instructions pour exécuter le projet
+
+Cloner le dépôt :
+
+git clone <URL_DU_DEPOT>
+
+
+Installer les dépendances :
+
+pip install reportlab
+
+
+Lancer le programme :
+
+python main.py
